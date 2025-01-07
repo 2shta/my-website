@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صفحة شخصية تحتوي على روابط التواصل مثل WhatsApp و Telegram و Instagram.">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>صفحتي الشخصية</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://i.postimg.cc/pV0L46gx/83092f51cd61c40f67974a13245d0dcc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: moveBackground 20s linear infinite alternate;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            line-height: 0.1;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .button {
+            width: 150px;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .whatsapp {
+            background-color: #25d366;
+        }
+
+        .whatsapp:hover {
+            background-color: #1ebe56;
+        }
+
+        .telegram {
+            background-color: #0088cc;
+        }
+
+        .telegram:hover {
+            background-color: #0077aa;
+        }
+
+        .instagram {
+            background-color: #e4405f;
+        }
+
+        .instagram:hover {
+            background-color: #d73555;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .facebook:hover {
+            background-color: #2d4373;
+        }
+
+        .phone-number {
+            background-color: #25d366;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            width: 150px;
+            margin-top: 20px;
+        }
+
+        .phone-number:hover {
+            background-color: #1ebe56;
+        }
+
+        .phone-number-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .clock-date {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 20px);
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .clock {
+            text-align: left;
+        }
+
+        .date {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-date">
+        <div class="clock" id="clock"></div>
+        <div class="date" id="date"></div>
+    </div>
+    <img src="https://i.postimg.cc/VvBJVB2t/20250102-180227.jpg" alt="صورة شخصية">
+    <h1>البشمهندس اشـطـاا</h1>
+    <p>كلـيه حاسـبات و مـعلومات المـنصوره</p>
+    <p>بـلقـاس بـلـدنـا 🤺'</p>
+    <p>20 سـنه رجـولـه و جـدعـنه</p>
+    <div class="buttons">
+        <a href="https://wa.me/201080054568" target="_blank" class="button whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://t.me/X_kshtah_X" target="_blank" class="button telegram">
+            <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+        <a href="https://instagram.com/2shta_x" target="_blank" class="button instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://www.facebook.com/2SHTAX?mibextid=ZbWKwL" target="_blank" class="button facebook">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+    </div>
+    <div class="phone-number-wrapper">
+        <a href="tel:+201080054568" class="phone-number">
+            <i class="fas fa-phone-alt"></i> رقم الهاتف
+        </a>
+    </div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            var timeStr = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            document.getElementById('clock').textContent = timeStr;
+
+            var dateStr = now.toLocaleDateString('ar-EG', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('date').textContent = dateStr;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
